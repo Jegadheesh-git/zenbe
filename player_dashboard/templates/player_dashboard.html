@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenminds</title>
+</head>
+<body>
+    <div id="nav-bar">
+        {% if user.is_authenticated %}
+        <ul><a href="{% url 'logout' %}">logout</a></ul>
+        {% else %}
+        <ul><a href="{% url 'login' %}">login</a></ul>
+        <ul><a href="{% url 'register' %}">Create an account</a></ul>
+        {% endif %}
+    </div>
+
+    <div>
+        <h3>hi</h3>
+        <form method="post">
+            {% csrf_token %}
+        <input type="text" placeholder="Player Id" name="name">
+        <input type="submit" value="Search">
+        </form>
+
+        <p><a href="{% url 'addplayer' %}">add new player</a></p>
+    </div>
+    <div>
+        {% for player in results %}
+        <div>
+            <h3>{{player.nickName}}</h3>
+            <p><a href="{% url 'getplayer' player.id %}">view</a></p>
+            <p><a href="{% url 'update_player' player.id %}">Edit</a></p>
+            <p><a href="{% url 'delete_player' player.id %}">Delete</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

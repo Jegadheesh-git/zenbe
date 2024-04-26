@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+   <a href="{% url 'update_player' player.id %}"><button>Edit</button></a>
+   <a href="{% url 'delete_player' player.id %}"><button>Delete</button></a> 
+    <h3>First Name : {{player.firstName}}</h3>
+    <h3>Middle Name : {{player.middleName}}</h3>
+    <h3>Last Name : {{player.lastName}}</h3>
+    <h3>Nick Name : {{player.nickName}}</h3>
+
+    <h3>Nationality Id : {{player.nationalityId}}</h3>
+    <h3>Date of birth : {{player.dob}}</h3>
+    <h3>Gender : {{player.gender}}</h3>
+
+    <h3>Height type : {{player.heightType}}</h3>
+    <h3>Height : {{player.height}}</h3>
+    <h3>weight : {{player.weight}}</h3>
+
+    <h3>Batting : {{player.firstName}}</h3>
+    <h3>Bowling : {{player.firstName}}</h3>
+    <h3>Wicket keeper : {{player.firstName}}</h3>
+    <h3>Fielding : {{player.firstName}}</h3>
+
+    <h3>Bowling type Id : {{player.bowlingTypeId}}</h3>
+    <h3>Batting type Id : {{player.battingTypeId}}</h3>
+    <h3>Bowler type Id : {{player.bowlerTypeId}}</h3>
+
+    <h3>Pace : {{player.pace}}</h3>
+    <h3>Spin : {{player.spin}}</h3>
+
+    <h3>CId : {{player.ciPlayerId}}</h3>
+
+
+
+
+
+</body>
+
+
+</html>
