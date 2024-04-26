@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | matches</title>
+</head>
+<body>
+    <h3><a href="{% url 'add_match' %}">Add Match</a></h3>
+
+    {% for match in matches %}
+    <div>
+        <h3>{{match.teamA}} vs {{match.teamB}}</h3>
+        <h5><a href="{% url 'update_match' match.id %}">edit</a></h5>
+        <h5><a href="{% url 'delete_match' match.id %}">delete</a></h5>
+
+    </div>
+    {% endfor %}
+
+</body>
+</html>

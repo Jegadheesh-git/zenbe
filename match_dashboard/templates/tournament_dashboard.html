@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{% url 'add_tournament' %}">Add tournament</a></li>
+    </ul>
+    <form action="">
+        <input type="text">
+        <button>Get</button>
+    </form>
+    <div>
+        {% for tournament in tournaments %}
+        <div>
+            <h4>{{tournament.name}}</h4>
+            <p><a href="{% url 'competition_dashboard' tournament.id %}">view</a></p>
+            <p><a href="{% url 'update_tournament' tournament.id %}">update</a></p>
+            <p><a href="{% url 'delete_tournament' tournament.id %}">delete</a></p>
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
